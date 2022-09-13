@@ -1,0 +1,13 @@
+body{
+    width: 100vh;
+    height: 100vh;
+    position: relative;
+}
+#contact{
+    position: relative;
+    right: 100vw;
+    transition: right 1s;
+}
+.goleft{
+    right: 0;
+}
