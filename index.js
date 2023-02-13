@@ -28,31 +28,59 @@ send.addEventListener("click",(e)=>{
     window.open(`mailto:gomezrenniel9@gmail.com?subject=${subject}&body=${body}`);
 })
 
-// CODE BELOW WORKS NEEDS REFINING
-// const contact = document.querySelector("#contact");
+const bottomTrigger = window.innerHeight / 5 * 4;
+const percentTrigger = window.innerHeight;
 
-// function elementInViewport(el) {
-//     var top = el.offsetTop;
-//     var left = el.offsetLeft;
-//     var width = el.offsetWidth;
-//     var height = el.offsetHeight;
 
-//     while (el.offsetParent) {
-//         el = el.offsetParent;
-//         top += el.offsetTop;
-//         left += el.offsetLeft;
-//     }
-//     return (
-//         top < (window.pageYOffset + window.innerHeight) &&
-//         left < (window.pageXOffset + window.innerWidth) &&
-//         (top + height) > window.pageYOffset &&
-//         (left + width) > window.pageXOffset
-//     );
-// }
-// window.addEventListener("scroll", () => {
-//     const isSeen = elementInViewport(contact);
-//     if (isSeen) {
-//         contact.classList.add("goleft");
-//     }
-// }
-// )
+addEventListener("scroll",()=>{
+    const boxes = document.querySelectorAll(".box");
+    const percent100 = document.querySelectorAll(".percent100");
+    const percent75 = document.querySelectorAll(".percent75");
+    const percent50 = document.querySelectorAll(".percent50");
+
+    boxes.forEach((box)=>{
+        const boxTop = box.getBoundingClientRect().top;
+        
+        if (boxTop < bottomTrigger) {
+            box.classList.add("show");
+        }
+        else{
+            box.classList.remove("show");
+        }
+    });
+
+    percent100.forEach((p100)=>{
+        const boxTop = p100.getBoundingClientRect().top;
+        
+        if (boxTop < percentTrigger) {
+            p100.classList.add("w-100");
+        }
+        else{
+            p100.classList.remove("w-100");
+        }
+    });
+
+    percent75.forEach((p75)=>{
+        const boxTop = p75.getBoundingClientRect().top;
+        
+        if (boxTop < percentTrigger) {
+            p75.classList.add("w-75");
+        }
+        else{
+            p75.classList.remove("w-75");
+        }
+    });
+
+    percent50.forEach((p50)=>{
+        const boxTop = p50.getBoundingClientRect().top;
+        
+        if (boxTop < percentTrigger) {
+            p50.classList.add("w-50");
+        }
+        else{
+            p50.classList.remove("w-50");
+        }
+    });
+    
+    
+})
