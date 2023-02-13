@@ -1,13 +1,34 @@
 body{
-    width: 100vh;
-    height: 100vh;
-    position: relative;
+    overflow-x: hidden;
 }
-#contact{
-    position: relative;
-    right: 100vw;
-    transition: right 1s;
+
+.box{
+    transform: translateX(700%);
+    transition: transform .7s ease;
 }
-.goleft{
-    right: 0;
+.box:nth-of-type(even){
+    transform: translateX(-700%);
+}
+.box.show{
+    transform: translateX(0);
+}
+.percent100{
+    width: 0;
+    transition: width .5s ease-in-out .7s;
+}
+.percent75{
+    width: 0;
+    transition: width .5s ease-in-out .7s;
+}
+.percent50{
+    width: 0;
+    transition: width .5s ease-in-out .7s;
+}
+.upsize{
+    z-index: 1;
+    transition: transform .3s ease, z-index .1s ease;
+}
+.upsize:hover{
+    transform: scale(1.1);
+    z-index: 9999;
 }
