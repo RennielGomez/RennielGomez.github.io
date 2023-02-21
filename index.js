@@ -1,22 +1,32 @@
 const link1 = document.querySelector("#link1");
 const link2 = document.querySelector("#link2");
 const link3 = document.querySelector("#link3");
+const link4 = document.querySelector("#link4");
+
 link1.addEventListener("click", () => {
     link1.classList.add("active");
     link2.classList.remove("active");
     link3.classList.remove("active");
+    link4.classList.remove("active");
 })
 link2.addEventListener("click", () => {
     link2.classList.add("active");
     link1.classList.remove("active");
     link3.classList.remove("active");
+    link4.classList.remove("active");
 })
 link3.addEventListener("click", () => {
     link3.classList.add("active");
     link1.classList.remove("active");
     link2.classList.remove("active");
+    link4.classList.remove("active");
 })
-
+link4.addEventListener("click", () => {
+    link4.classList.add("active");
+    link3.classList.remove("active");
+    link1.classList.remove("active");
+    link2.classList.remove("active");
+})
 const mail = document.querySelector("#mail");
 const message = document.querySelector("#message");
 const send = document.querySelector("#send");
