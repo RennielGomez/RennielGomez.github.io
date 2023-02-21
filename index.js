@@ -28,11 +28,11 @@ send.addEventListener("click",(e)=>{
     window.open(`mailto:gomezrenniel9@gmail.com?subject=${subject}&body=${body}`);
 })
 
-const bottomTrigger = window.innerHeight / 5 * 4;
+const bottomTrigger = window.innerHeight / 4 * 3;
 const percentTrigger = window.innerHeight;
 
-
-addEventListener("scroll",()=>{
+const scroll = ()=>{
+    
     const boxes = document.querySelectorAll(".box");
     const percent100 = document.querySelectorAll(".percent100");
     const percent75 = document.querySelectorAll(".percent75");
@@ -83,4 +83,8 @@ addEventListener("scroll",()=>{
     });
     
     
-})
+}
+
+
+addEventListener("scroll",scroll)
+addEventListener("touchmove",scroll)
